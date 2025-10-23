@@ -7,14 +7,12 @@ class Solution(object):
         if nums=="":
             return 0
 
-        res = 1
-        i = 1
-        while i < len(nums):
+        res = 1        
+        for i in range(1, len(nums)):
             #print(i)
             if nums[i-1] != nums[i]:
                 nums[res] = nums[i]
-                res = res+1              
-            i = i+1
+                res += 1              
         #print(nums)
         return res
         
