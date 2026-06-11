@@ -5,30 +5,38 @@
 5        :type val: int
 6        :rtype: int
 7        """
-8        k = 0
-9        ln = len(nums)
-10        idx = ln-1
-11        i = 0
-12        while i <= idx:
-13            if nums[i] == val:
-14                nums[i], nums[idx] = nums[idx], nums[i]
-15                idx -= 1
-16            else:
-17                i += 1
-18        return idx+1 
-19
-20
+8        idx = 0
+9        n = len(nums) - 1
+10        while idx <= n:
+11            if nums[idx] == val:
+12                #nums[idx], nums[n] = nums[n], nums[idx]
+13                nums.pop(idx)
+14                n -= 1
+15            else:
+16                idx += 1
+17        #print("nums = ", nums)
+18        #print("n=", n)
+19        #nums = nums[:n+1]
+20        return len(nums)
 21
 22
 23
-24        for i in range(len(nums)):
-25            if nums[i] == val:
-26                while nums[idx] == val:
-27                    idx -= 1
-28                    k += 1
-29                    print("new idx = ", idx)
-30                nums[i], nums[idx] = nums[idx], nums[i]
+24
+25
+26
+27
+28
+29
+30
 31
-32        print("k=",k,"  ln-k=",ln-k)
-33        print("nums=", nums)
-34        return ln-k
+32        k = 0
+33        ln = len(nums)
+34        idx = ln-1
+35        i = 0
+36        while i <= idx:
+37            if nums[i] == val:
+38                nums[i], nums[idx] = nums[idx], nums[i]
+39                idx -= 1
+40            else:
+41                i += 1
+42        return idx+1 
